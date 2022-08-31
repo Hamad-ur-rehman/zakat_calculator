@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+   <meta charset="utf-8">
+   <title>Zakat Calculator</title>
+   <link href="/bootstrap.min.css" rel="stylesheet">
+   <script src="/bootstrap.min.js"></script>
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <style>
+form
+{
+
+
+background-color: rgba(7, 7, 7, 0.934);
+margin-left: auto;
+margin-right: auto;
+justify-items: center;
+text-align: center;
+padding: 30px;
+margin-top: 10px;
+border-radius: 0px 25px 0px 25px;
+min-height:90vh;
+}
+.mb-3
+{
+margin-left: auto;
+margin-right: auto;
+color: white;
+
+}
+.form-control
+{
+
+border: 1px solid rgb(246, 167, 21);
+
+
+}
+
+.form-control:hover
+{
+box-shadow:3px 3px 8px rgb(246, 167, 21);
+
+}
+h1
+{
+background-color: rgb(246, 167, 21);
+padding: 10px;
+border-radius:50px;
+font-family: cursive;
+color: black;
+
+}
+.btn
+{
+font-size: 20px;
+outline: none;
+
+}
+.btn:hover
+{
+font-size: 22px;
+
+}
+
+ </style>
+</head>
+
+
+<body>
+ <div>
+    <form action="#" method="get" class="col-lg-6">
+        <div class="mb-3 col-lg-10">
+          <h1>Zakat Calculator</h1>
+          </div>
+        <div class="mb-3 col-lg-8">
+        <label for="formGroupExampleInput" class="form-label">Enter Gold amount in gram</label>
+        <input type="number" class="form-control" id="gold" required >
+      </div>
+      <div class="mb-3 col-lg-8">
+        <label for="formGroupExampleInput2" class="form-label">Enter silver amount in gram</label>
+        <input type="number" class="form-control" id="silver" required>
+      </div>
+      <div class="mb-3 col-lg-8">
+        <label for="formGroupExampleInput2" class="form-label">Enter Cash on hand</label>
+        <input type="number" class="form-control" id="cash" required>
+      </div>
+      <div class="mb-3 col-lg-8">
+        <label for="formGroupExampleInput2" class="form-label">Enter Bank Amount</label>
+        <input type="number" class="form-control" id="bank" required>
+      </div>
+      <div class="mb-3 col-lg-8">
+        <label for="formGroupExampleInput2" class="form-label">Real Estate Assests</label>
+        <input type="number" class="form-control" id="assests" required>
+      </div>
+      <div class="mb-3 col-lg-8">
+        <label for="formGroupExampleInput2" class="form-label">Enter Liabilities</label>
+        <input type="number" class="form-control" id="liabilities" required>
+      </div>
+      <div class="mb-3 col-lg-4">
+       <input type="button" class="btn btn-primary bg-success" value="Calculate" onclick="calculate()">
+      </div>
+      <div class="mb-3 col-lg-8">
+        <label for="formGroupExampleInput2" class="form-label">Result</label>
+        <input type="text" class="form-control" id="result" readonly>
+      </div>
+     
+    </form>
+</div>
+<script>
+   
+function calculate()
+{
+    
+    var gold=parseFloat(document.getElementById("gold").value);
+    var silver=parseFloat(document.getElementById('silver').value);
+    var cash= parseFloat(document.getElementById('cash').value);
+    var bank=parseFloat(document.getElementById('bank').value);
+    var assests=parseFloat(document.getElementById('assests').value);
+    var liabilities=parseFloat(document.getElementById('liabilities').value);
+   
+  var alldata=(gold + silver + cash + bank + assests)-liabilities;
+var totalzakat=parseFloat(alldata * 0.025);
+document.getElementById('result').value = totalzakat;
+
+
+}
+
+
+
+</script>
+
+
+</body>
+
+</html>
